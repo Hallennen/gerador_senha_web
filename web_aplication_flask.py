@@ -4,15 +4,6 @@ import random
 
 app = Flask(__name__)
 
-@app.route('/index', methods=['GET', 'POST'])
-def index():
-    if request.method == 'POST':
-        name = request.form['name']
-    else:
-        name = ''
-
-    return render_template('index.html', name=name)
-
 @app.route('/login', methods=['GET','POST'])
 def login():
     if request.method == 'POST':
